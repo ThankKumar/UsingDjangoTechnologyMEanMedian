@@ -1,0 +1,94 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-sm-10">
+    <h3 class="text-white my-5" >You Are Currently Active</h3>
+    <p class="text-primary">You Have Sucessfully LogiedIN</p>
+    
+    </div>
+      <script>
+            function Myfun1(){
+                  var a =parseInt(document.getElementById("number1").value);
+                  var b =parseInt (document.getElementById("number2").value);
+                  var c =parseInt (document.getElementById("number3").value);
+                  var d =parseInt (document.getElementById("number4").value);
+                  var e =parseInt( document.getElementById("number5").value);
+                  document.getElementById("result").innerHTML = (a+b+c+d+e)/5;
+      
+            }
+           
+           function Myfun2(){
+                           var a =parseInt(document.getElementById("number1").value);
+                           var b =parseInt (document.getElementById("number2").value);
+                           var c =parseInt (document.getElementById("number3").value);
+                           var d =parseInt (document.getElementById("number4").value);
+                           var e =parseInt( document.getElementById("number5").value);
+                    const median = arr => {
+                     const mid = Math.floor(arr.length / 2),
+                       nums = [...arr].sort((a, b) => a - b);
+                     return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+                   };
+                   document.getElementById("result1").innerHTML =(median([a, b, c, d, e]));
+                  }
+      </script>
+      <style>
+            input {
+              padding: 5px;
+              margin: 5px;
+              //color: black;
+              border-radius: 10%;
+            }
+            .jsform{
+              border-radius: 10%;
+            }
+            
+          </style>
+        </head>
+        <body>
+              <div class="container">
+      
+                  <section class=" mt-3">
+                        <h3 class=" h3class font-monospace text-decoration-underline text-center bg-danger text-white font-family">find Data Mean and Median</h3>
+                        
+                    <div class="container bg-primary">
+                        <div class="row">
+                            <div class="col-6 mx-auto px-3">
+                                <form class="border mb-5 p-5 bg-dark ">
+                               
+                                    <div class="container text-center mt-1 p-5 bg-success jsform">
+      
+       
+                                         <label class="text-black" for="">1:sT Number:</label> 
+                                          <input class="text-black" type="number" value="" id="number1"><br><br>
+                                         <label  class="text-black" for="">2:nD Number: </label>  
+                                          <input class="text-black" type="number" value="" id="number2"><br><br>
+                                          <label class="text-black" for="">3:rD Number:</label>
+                                          <input class="text-black" type="number" value="" id="number3"><br><br>
+                                         <label class="text-black" for="">4:tH Number:</label> 
+                                          <input class="text-black" type="number" value="" id="number4"><br><br>
+                                         <label class="text-black" for="">4:tH Number:</label>
+                                          <input class="text-black"  type="number" value="" id="number5"><br><br>
+                                      <div class="text-center" style="position:relative; left:3%">
+                                      
+                                      
+                                          <input  type="button" value="1.Mean" onclick="return Myfun1()">
+                                          <input type="button" value="2.Median" onclick="return Myfun2()"> <br>
+                                    <div >
+                                      <span>The Result is: <br>
+                                      1.Mean: <br>
+                                      2.Median:
+                                    </span> <br>
+                                      <span id="result"></span> <br>
+                                      <span id="result1"> </span>
+                                    </div>
+                                      
+                                 </form>
+                            </div>
+                        </div>
+                </section>
+              </div>
+   
+
+{% endblock content %}
